@@ -1,0 +1,207 @@
+/* transiciones */
+/* las propiedades de css transition-property
+ se usan para definir los nombre de las propiedades
+  de css en las que el efecto de la trsnsicion debe aplicarse */
+
+
+  /* armamos un cuadrado:
+  1- a la transicion le vamos a decir que
+   nos cambie el backgound-color y le ponemos el tiempo en el 
+   cual nos lo tiene que cambiar, despues del tiempo voy a poner
+    de que manera va a ser el ese cambio, por ejemplo le puse ease.
+   2- yo a la transicion le tenfgo que dar una seudo clase,
+   l edigo que me cambie el colora coral por ejemplo, cuando pase
+    el mouse, y tambien el tamaño, le agrefo un selector a estra seudoclase, 
+    este selector es :hover*/
+  
+
+  /* .item {
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    transition: background-color, 2s, ease ;
+  }
+
+  .item:hover  {
+    background-color: coral;
+    width: 300px;
+  } */
+
+  /* transition-duration */
+  /* esta propiedad establece el tiempo que debe tqardar la animacion
+  de transicion en cambiarse de estado, por defecto el valor es de cero
+  eso quiere decir que si no le ponemos vslor no se producira ninguna
+   animacion */
+
+   /* transition-delay */
+   /* esta propiedad especifica la cantidad de tiempo a esperar entre el
+    cambio pedido hacia una propiedad y el comienzo de un ef3ecto de transition
+     (transition-effect) */
+
+     /* transition-timing-function */
+     /* estavblece como se calculan los valores inetrmedios para las propieddades de css, 
+     quie se ven afectadas por una transitions, esto en esecia, te permite
+      establecer una curva de aceleracion para que la velocidad de la transition pueda 
+      variar a lo largo de su duracion*/
+
+      /* ease| ease-in| ease-in-out | ease-out */
+
+
+
+    /* CARD */
+
+    /*  EN PRIMERA INSTANCIA VAMOS A DARLE ESTILOS A A LA CARD. O SEA A LO QUE ENvUELVE A LA 
+    TODA LA TARJETA   */
+
+
+  /* empezamos poniendo un posicion, este nos va a dar la posiciocn de nuestro elemento, donde 
+  se activan los elementos, left, top, rigth. un ancho y un alto, ponerle un color de fondo, un
+   text- aling center para alinear el texto y un borde a toda la tarjeta, y si tiene un contenido 
+   excedente que me lo oculte ( esto lo hacemos con overflow:hidden;), la altura y el ancho van a
+   van a estar de acuerdo con la imagen, en este caso 300px y 350px, pero puede variar segun la img*/
+
+.card {
+    border: 5px solid black;  
+    position: relative;
+    width: 300px;
+    height: 350px;
+    background-color: rgb(151, 124, 177);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* ahora le vamos a dar estilos al div que seria el contenido del titulo, el parrafo y el ancor 
+con el botton, le vamos a poner posicion: absolut; esto va a ser lo que tome ,la posicion que tiene
+ el padre, top, left, un ancho y altura, todo esto con respécto a la posicion del padre, y hara que
+ de la imagen, ahora un transform, destro de esto un traslate, que me la traslade 300px negativo,ya
+que este translate hace que el texto este detras de la imagen, el top cero para que quede arriba y el left al costado  */
+
+.card__data {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translatey(-300px);
+
+}
+
+/*ahora le vamos a dar estilos a la clase de la imagen, le damos un ancho del 100, altura del 100, todo 
+con respecto al padre, objet-fit: cover; esto lo que hace se ajusta al contenedor
+y una transicion, la propiedad transform, con un tiempo .025 segundos y 0.35s; */
+
+.card__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: tranSform .25s .35s;
+}
+
+/* ahora ponerle estilos al titulo, cambiar el tamaño de la fuente, una transformacion de este texto,
+text- tranform: uppercase; este elemento vahacer que se cambie el titulo a que sea mayuscula, color negro,
+ vamso a ponerle un pading para q tenga espacios en sus lados de 5 px, el fondo blanco, margin tambien top 40px
+ */
+
+.card__title {
+    font-size: 26px;
+    text-transform: uppercase;
+    color: black;
+    padding: 5px;
+    background-color: #fff;
+    margin-top: 40px;
+}
+
+/*ahora le vamos a dar estilos a la descricion de la card, que seria el parrafo debajo del titulo,
+un padding, un margin bottom que es abaj, color blanco para las letras
+ */
+
+.card__description {
+    padding: 10px;
+    margin-bottom: 25px;
+    color:#fff
+}
+
+/*ahora al boton  estilos, display in line block, para que este abjo de los demas, text decoration none, 
+para que no tenga nada, padding 10px y 10px, en ambos lados, este padding va hacer que si le ponemos un
+ color de fondo el boton se va a pintar, color black, y transition: vamos acambiar el color de fondo, este
+sucesa en .25s, como los demas cambios, ests cambhios van a pasar cuando el mouse, estos cambios no van a
+ ocurrir hasta que yo le ponga el :hover*/
+
+
+ .card__btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 10px;
+    color: black;
+    background-color: #fff;
+    transition: backgroun-color .25s; 
+ }
+ 
+ /*ahora que que pase toda esta magia tenemos que activar todas las transformaciones y transiciones con el :hover,
+  lo haremos con todas las clases donde quiero que pasen los cambios que quiero que se produscan
+  En el caso del boton cambiaremos erl backgorund-color a verde y el color de la fuente ntambie lo cambiaremos
+  de negro a blanco cuando pasemos el cursor por encima*/
+
+.card__btn:hover {
+    background-color: green;
+    color:#fff;
+}
+  
+/*aca en el traslate en el eje y, de estar atras de la imagen, lo que hago es que cuando pase el mouse por encima
+ se traslade a 0px, sobre el eje y. ya que la imagen hasta que no pase el mouse esta tapando la data.
+*/
+.card:hover .card__data {
+    transform: translateY(0px);
+}
+
+/*ahora en la clase card sobre card__img, el tralate sobre el eje x, por medio de un transform de 300px,
+y una transition delay en 0s, esto hara que la imagen se traslade hacia el costado y aparesca la descripcion de
+ la imagen, como el conmtenedor es de 300px y ahora con la ytransformacion le digo que se transñlade 300px, la
+  imagen va a desaparecer*/
+
+.card:hover .card__img {
+    transform: translateX(300px);
+    transition-delay: 0s;
+
+}
+
+/* cuando hacemos una transicion con transformacion hay que darle un tiempo para cuando desaparece y uno cuando 
+tiene   que aparecer la imagen, cuando sacamos el cursor de la imagen hay que ponerle una tiempo para que aparesca. */
+
+/* en el caso de posicion absolut, esta ligado al posicion relative, por eso la mewdida que tenemos en el card, en el 
+card__data tenemos que poner que ocupe el 100% de ancho y alto. */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
