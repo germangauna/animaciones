@@ -143,7 +143,7 @@ sucesa en .25s, como los demas cambios, ests cambhios van a pasar cuando el mous
   de negro a blanco cuando pasemos el cursor por encima*/
 
 .card__btn:hover {
-    background-color: green;
+    background-color: pink;
     color:#fff;
 }
   
