@@ -113,7 +113,7 @@ text- tranform: uppercase; este elemento vahacer que se cambie el titulo a que s
 
 /*ahora le vamos a dar estilos a la descricion de la card, que seria el parrafo debajo del titulo,
 un padding, un margin bottom que es abaj, color blanco para las letras
- */
+ add */
 
 .card__description {
     padding: 10px;
@@ -145,6 +145,7 @@ sucesa en .25s, como los demas cambios, ests cambhios van a pasar cuando el mous
 .card__btn:hover {
     background-color: pink;
     color:#fff;
+    font-size: 10px;
 }
   
 /*aca en el traslate en el eje y, de estar atras de la imagen, lo que hago es que cuando pase el mouse por encima
