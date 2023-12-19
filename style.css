@@ -174,7 +174,30 @@ card__data tenemos que poner que ocupe el 100% de ancho y alto. */
 
 
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
 
+}
+
+.footer__redes a {
+  justify-content: end;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 10px;
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+
+}
+
+.footer h2 {
+  display: flex;
+  justify-content: end;
+  align-items: endgo;
+}
 
 
 
